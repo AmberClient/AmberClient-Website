@@ -68,6 +68,7 @@ body, html {
   display: flex;
   flex-direction: column;
   align-items: center;
+  overflow: hidden;
 }
 
 h1 {
@@ -76,6 +77,10 @@ h1 {
   color: var(--primary);
   text-align: center;
   text-shadow: 0 0 6px #ffca2855;
+  white-space: nowrap;
+  overflow: hidden;
+  display: inline-block;
+  width: 100%;
 }
 
 .description {

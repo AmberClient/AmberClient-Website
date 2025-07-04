@@ -36,7 +36,7 @@ const App = () => {
             <div className="background-pattern"></div>
 
             <div className="glass">
-                <h1>Amber Client</h1>
+                <h1>Amber Client - by @gqdThinky</h1>
 
                 <p className="description">
                     A Minecraft mod client focused on a clean design, performance, and essential utility modules.
