@@ -253,3 +253,7 @@ a:hover {
     padding: 1rem;
   }
 }
+
+.heart {
+  color: red;
+}

@@ -20,16 +20,16 @@ const App = () => {
         'NoHurtCam'
     ];
 
+    const github_contributors = [
+        { name: '@enzzzh', url: 'https://github.com/enzzzh' },
+        { name: '@ProgMEM-CC', url: 'https://github.com/ProgMEM-CC' }
+    ]
+
     const reddit_contributors = [
         { name: 'u/Ok_Butterfly8951', url: 'https://www.reddit.com/user/Ok_Butterfly8951/' },
         { name: 'u/ilmaestrofficial', url: 'https://www.reddit.com/user/ilmaestrofficial/' },
         { name: 'u/Classic_Lion_9491', url: 'https://www.reddit.com/user/Classic_Lion_9491/' },
     ];
-
-    const github_contributors = [
-        { name: '@enzzzh', url: 'https://github.com/enzzzh' },
-        { name: '@ProgMEM-CC', url: 'https://github.com/ProgMEM-CC' }
-    ]
 
     return (
         <div className="app">
@@ -165,6 +165,7 @@ const App = () => {
             </div>
 
             <footer className="footer">
+                <p>Made with <span className="heart">❤</span> by @gqdThinky & @ProgMEM-CC</p>
                 <p>Amber Client is an independent project. Not affiliated with Mojang or Microsoft.</p>
             </footer>
         </div>
