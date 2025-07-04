@@ -3,7 +3,7 @@ import './App.css';
 
 const App = () => {
     const modules = [
-        'Hitbox (detectable)',
+        'Hitbox',
         'Fullbright',
         'Xray',
         'NoFall',
@@ -14,15 +14,22 @@ const App = () => {
         'FastBreak',
         'EntityESP',
         'MurdererFinder (for Hypixel)',
-        'AutoClutch (In development)'
+        'AutoClutch',
+        'Velocity',
+        'AimAssist',
+        'NoHurtCam'
     ];
 
-    const contributors = [
-        { name: 'u/EnzzzXD', url: 'https://www.reddit.com/user/EnzzzXD/' },
-        { name: 'u/ilmaestrofficial', url: 'https://www.reddit.com/user/ilmaestrofficial/' },
+    const reddit_contributors = [
         { name: 'u/Ok_Butterfly8951', url: 'https://www.reddit.com/user/Ok_Butterfly8951/' },
-        { name: 'u/Classic_Lion_9491', url: 'https://www.reddit.com/user/Classic_Lion_9491/' }
+        { name: 'u/ilmaestrofficial', url: 'https://www.reddit.com/user/ilmaestrofficial/' },
+        { name: 'u/Classic_Lion_9491', url: 'https://www.reddit.com/user/Classic_Lion_9491/' },
     ];
+
+    const github_contributors = [
+        { name: '@enzzzh', url: 'https://github.com/enzzzh' },
+        { name: '@ProgMEM-CC', url: 'https://github.com/ProgMEM-CC' }
+    ]
 
     return (
         <div className="app">
@@ -114,7 +121,24 @@ const App = () => {
                 <details className="details-section">
                     <summary>🙌 Acknowledgments</summary>
                     <p>
-                        Thanks to the{' '}
+                        Thanks to all the contributors who helped on this project:
+                    </p>
+                    <ul>
+                        {github_contributors.map((contributor, index) => (
+                            <li key={index}>
+                                <a
+                                href={contributor.url}
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                >
+                                    {contributor.name}
+                                </a>
+                            </li>
+                        ))}
+                    </ul>
+
+                    <p>
+                        <br />Thanks to the{' '}
                         <a
                             href="https://www.reddit.com/r/minecraftclients/"
                             target="_blank"
@@ -125,7 +149,7 @@ const App = () => {
                         in particular:
                     </p>
                     <ul>
-                        {contributors.map((contributor, index) => (
+                        {reddit_contributors.map((contributor, index) => (
                             <li key={index}>
                                 <a
                                     href={contributor.url}
