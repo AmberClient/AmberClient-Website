@@ -33,8 +33,6 @@ const App = () => {
 
     return (
         <div className="app">
-            <div className="background-pattern"></div>
-
             <div className="glass">
                 <h1>
                     <span className="text-4xl">Amber Client</span>
@@ -130,9 +128,9 @@ const App = () => {
                         {github_contributors.map((contributor, index) => (
                             <li key={index}>
                                 <a
-                                href={contributor.url}
-                                target="_blank"
-                                rel="noopener noreferrer"
+                                    href={contributor.url}
+                                    target="_blank"
+                                    rel="noopener noreferrer"
                                 >
                                     {contributor.name}
                                 </a>

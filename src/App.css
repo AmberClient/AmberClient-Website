@@ -1,14 +1,15 @@
 @font-face {
   font-family: 'MinecraftOTF';
   src: url('https://raw.githubusercontent.com/ProgMEM-CC/Minecraft-Font/refs/heads/main/Minecraft.otf') format('opentype');
+  /* BOLD FONT src: url('https://raw.githubusercontent.com/IdreesInc/Minecraft-Font/main/Minecraft-Bold.otf') format('opentype'); */
   font-weight: normal;
   font-style: normal;
 }
 
 :root {
   --primary: #ffca28;
-  --background: #0e0e0e;
-  --surface: rgba(28, 28, 28, 0.9);
+  --background: #0a0a0a;
+  --surface: rgba(20, 20, 20, 0.85);
   --text: #e8e8e8;
   --accent: #ffb300;
 }
@@ -41,34 +42,38 @@ body, html {
   position: relative;
 }
 
-.background-pattern {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100vw;
-  height: 100vh;
-  background: radial-gradient(circle, #ffca2833 1px, transparent 1px);
-  background-size: 36px 36px;
-  z-index: -1;
-  opacity: 0.03;
-  animation: animateBG 45s linear infinite;
-}
-
 .glass {
   background: var(--surface);
   border-radius: 20px;
   padding: 3rem;
   width: 100%;
   max-width: 900px;
-  backdrop-filter: blur(12px);
-  -webkit-backdrop-filter: blur(12px);
-  border: 1px solid rgba(255, 255, 255, 0.05);
-  box-shadow: 0 12px 40px rgba(255, 202, 40, 0.15);
+  backdrop-filter: blur(15px);
+  -webkit-backdrop-filter: blur(15px);
+  border: 1px solid rgba(255, 202, 40, 0.1);
+  box-shadow:
+          0 8px 32px rgba(0, 0, 0, 0.3),
+          0 0 80px rgba(255, 202, 40, 0.1),
+          inset 0 1px 0 rgba(255, 255, 255, 0.05);
   animation: fadeIn 1s ease;
   display: flex;
   flex-direction: column;
   align-items: center;
   overflow: hidden;
+  position: relative;
+}
+
+.glass::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: radial-gradient(circle at 50% 50%, rgba(255, 202, 40, 0.03) 0%, transparent 70%);
+  border-radius: 20px;
+  pointer-events: none;
+  z-index: -1;
 }
 
 h1 {
@@ -76,7 +81,10 @@ h1 {
   margin-bottom: 1.5rem;
   color: var(--primary);
   text-align: center;
-  text-shadow: 0 0 6px #ffca2855;
+  text-shadow:
+          0 0 10px rgba(255, 202, 40, 0.5),
+          0 0 20px rgba(255, 202, 40, 0.3),
+          0 0 30px rgba(255, 202, 40, 0.1);
   white-space: nowrap;
   overflow: hidden;
   display: inline-block;
@@ -89,6 +97,7 @@ h1 {
   margin-bottom: 2rem;
   text-align: center;
   max-width: 600px;
+  color: rgba(232, 232, 232, 0.9);
 }
 
 .download-btn {
@@ -96,37 +105,64 @@ h1 {
   margin: 1.5rem auto 2.5rem auto;
   padding: 1rem 2rem;
   font-size: 1.2rem;
-  color: white;
-  background-color: var(--accent);
+  color: #1a1a1a;
+  background: linear-gradient(135deg, var(--primary), var(--accent));
   border: none;
   border-radius: 12px;
   text-decoration: none;
-  box-shadow: 0 0 12px var(--accent);
+  box-shadow:
+          0 4px 15px rgba(255, 202, 40, 0.3),
+          0 0 30px rgba(255, 202, 40, 0.2);
   transition: all 0.3s ease;
   text-align: center;
   cursor: pointer;
+  font-weight: bold;
+  position: relative;
+  overflow: hidden;
+}
+
+.download-btn::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+  transition: left 0.5s ease;
+}
+
+.download-btn:hover::before {
+  left: 100%;
 }
 
 .download-btn:hover {
-  background-color: #ffa000;
-  transform: scale(1.05);
-  box-shadow: 0 0 20px var(--accent);
+  background: linear-gradient(135deg, #ffd54f, #ffca28);
+  transform: translateY(-2px) scale(1.03);
+  box-shadow:
+          0 8px 25px rgba(255, 202, 40, 0.4),
+          0 0 40px rgba(255, 202, 40, 0.3);
 }
 
 .details-section {
-  background-color: rgba(255, 255, 255, 0.035);
-  border: 1px solid rgba(255, 202, 40, 0.1);
+  background: rgba(255, 255, 255, 0.02);
+  border: 1px solid rgba(255, 202, 40, 0.15);
   border-radius: 14px;
   padding: 1rem 1.5rem;
   margin-bottom: 1.5rem;
   width: 100%;
   box-sizing: border-box;
   transition: all 0.3s ease;
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
 }
 
 .details-section[open] {
-  background-color: rgba(255, 255, 255, 0.04);
-  border-color: rgba(255, 202, 40, 0.2);
+  background: rgba(255, 255, 255, 0.04);
+  border-color: rgba(255, 202, 40, 0.25);
+  box-shadow:
+          0 4px 20px rgba(0, 0, 0, 0.1),
+          inset 0 1px 0 rgba(255, 255, 255, 0.05);
 }
 
 .details-section summary {
@@ -137,11 +173,14 @@ h1 {
   list-style: none;
   outline: none;
   padding: 0.5rem 0;
-  transition: color 0.3s ease;
+  transition: all 0.3s ease;
+  text-shadow: 0 0 5px rgba(255, 202, 40, 0.3);
 }
 
 .details-section summary:hover {
   color: var(--accent);
+  text-shadow: 0 0 8px rgba(255, 179, 0, 0.5);
+  transform: translateX(5px);
 }
 
 .details-section summary::-webkit-details-marker {
@@ -157,30 +196,50 @@ h1 {
 .details-section li {
   margin-bottom: 0.5rem;
   line-height: 1.4;
+  color: rgba(232, 232, 232, 0.9);
 }
 
 .details-section p {
   margin-top: 0.75rem;
   text-align: center;
   line-height: 1.5;
+  color: rgba(232, 232, 232, 0.9);
 }
 
 .details-section code {
-  background-color: rgba(255, 255, 255, 0.1);
-  padding: 2px 4px;
-  border-radius: 3px;
+  background: rgba(255, 202, 40, 0.1);
+  padding: 3px 6px;
+  border-radius: 4px;
   font-family: 'Courier New', monospace;
+  color: var(--primary);
+  border: 1px solid rgba(255, 202, 40, 0.2);
 }
 
 a {
   color: var(--primary);
   text-decoration: none;
-  transition: color 0.3s ease;
+  transition: all 0.3s ease;
+  position: relative;
 }
 
 a:hover {
   color: var(--accent);
-  text-decoration: underline;
+  text-shadow: 0 0 5px rgba(255, 179, 0, 0.5);
+}
+
+a::after {
+  content: '';
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  width: 0;
+  height: 1px;
+  background: linear-gradient(90deg, var(--primary), var(--accent));
+  transition: width 0.3s ease;
+}
+
+a:hover::after {
+  width: 100%;
 }
 
 .footer {
@@ -191,23 +250,19 @@ a:hover {
   width: 100%;
 }
 
+.heart {
+  color: #ff6b6b;
+  filter: drop-shadow(0 0 3px rgba(255, 107, 107, 0.5));
+}
+
 @keyframes fadeIn {
   from {
     opacity: 0;
-    transform: translateY(20px);
+    transform: translateY(30px);
   }
   to {
     opacity: 1;
     transform: translateY(0);
-  }
-}
-
-@keyframes animateBG {
-  0% {
-    background-position: 0 0;
-  }
-  100% {
-    background-position: 1000px 1000px;
   }
 }
 
@@ -257,8 +312,4 @@ a:hover {
   .details-section {
     padding: 1rem;
   }
-}
-
-.heart {
-  color: red;
 }
