@@ -266,32 +266,148 @@ a:hover::after {
   }
 }
 
-/* Responsive design */
+.gtranslate_wrapper {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  z-index: 1000;
+  font-family: 'MinecraftOTF', monospace !important;
+}
+
+/* Bouton principal */
+.gtranslate_wrapper .gt_float_switcher {
+  background: var(--surface) !important;
+  border: 1px solid rgba(255, 202, 40, 0.2) !important;
+  border-radius: 12px !important;
+  backdrop-filter: blur(15px) !important;
+  -webkit-backdrop-filter: blur(15px) !important;
+  box-shadow:
+          0 4px 15px rgba(0, 0, 0, 0.2),
+          0 0 20px rgba(255, 202, 40, 0.1) !important;
+  transition: all 0.3s ease !important;
+  padding: 8px 12px !important;
+  font-family: 'MinecraftOTF', monospace !important;
+}
+
+.gtranslate_wrapper .gt_float_switcher:hover {
+  background: rgba(255, 202, 40, 0.1) !important;
+  border-color: rgba(255, 202, 40, 0.4) !important;
+  box-shadow:
+          0 6px 20px rgba(0, 0, 0, 0.3),
+          0 0 30px rgba(255, 202, 40, 0.2) !important;
+  transform: translateY(-2px) !important;
+}
+
+/* Texte du bouton */
+.gtranslate_wrapper .gt_float_switcher .gt_selected {
+  color: var(--primary) !important;
+  font-weight: bold !important;
+  text-shadow: 0 0 5px rgba(255, 202, 40, 0.3) !important;
+  font-family: 'MinecraftOTF', monospace !important;
+}
+
+/* Flèche du dropdown */
+.gtranslate_wrapper .gt_float_switcher .gt_float_arrow {
+  border-top-color: var(--primary) !important;
+  filter: drop-shadow(0 0 3px rgba(255, 202, 40, 0.5)) !important;
+}
+
+/* Menu déroulant */
+.gtranslate_wrapper .gt_float_switcher .gt_languages {
+  background: var(--surface) !important;
+  border: 1px solid rgba(255, 202, 40, 0.2) !important;
+  border-radius: 12px !important;
+  backdrop-filter: blur(15px) !important;
+  -webkit-backdrop-filter: blur(15px) !important;
+  box-shadow:
+          0 8px 32px rgba(0, 0, 0, 0.3),
+          0 0 80px rgba(255, 202, 40, 0.1) !important;
+  margin-top: 5px !important;
+  padding: 8px 0 !important;
+  max-height: 200px !important;
+  overflow-y: auto !important;
+  font-family: 'MinecraftOTF', monospace !important;
+}
+
+/* Scrollbar personnalisée pour le menu */
+.gtranslate_wrapper .gt_float_switcher .gt_languages::-webkit-scrollbar {
+  width: 6px;
+}
+
+.gtranslate_wrapper .gt_float_switcher .gt_languages::-webkit-scrollbar-track {
+  background: rgba(255, 202, 40, 0.1);
+  border-radius: 3px;
+}
+
+.gtranslate_wrapper .gt_float_switcher .gt_languages::-webkit-scrollbar-thumb {
+  background: var(--primary);
+  border-radius: 3px;
+  box-shadow: 0 0 3px rgba(255, 202, 40, 0.5);
+}
+
+/* Options de langue */
+.gtranslate_wrapper .gt_float_switcher .gt_languages a {
+  color: var(--text) !important;
+  padding: 8px 16px !important;
+  text-decoration: none !important;
+  display: block !important;
+  transition: all 0.3s ease !important;
+  font-family: 'MinecraftOTF', monospace !important;
+  font-size: 0.9rem !important;
+  border-left: 3px solid transparent !important;
+}
+
+.gtranslate_wrapper .gt_float_switcher .gt_languages a:hover {
+  background: rgba(255, 202, 40, 0.1) !important;
+  color: var(--primary) !important;
+  border-left-color: var(--primary) !important;
+  text-shadow: 0 0 5px rgba(255, 202, 40, 0.3) !important;
+  transform: translateX(5px) !important;
+}
+
+/* Option actuellement sélectionnée */
+.gtranslate_wrapper .gt_float_switcher .gt_languages a.gt_current_language {
+  background: rgba(255, 202, 40, 0.15) !important;
+  color: var(--primary) !important;
+  border-left-color: var(--primary) !important;
+  font-weight: bold !important;
+  text-shadow: 0 0 5px rgba(255, 202, 40, 0.3) !important;
+}
+
+/* Animation d'entrée */
+.gtranslate_wrapper .gt_float_switcher .gt_languages {
+  animation: gtFadeIn 0.3s ease !important;
+}
+
+@keyframes gtFadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Responsive */
 @media (max-width: 768px) {
-  .app {
-    padding: 1rem;
+  .gtranslate_wrapper {
+    top: 15px;
+    right: 15px;
   }
 
-  .glass {
-    padding: 2rem;
-    max-width: 100%;
+  .gtranslate_wrapper .gt_float_switcher {
+    padding: 6px 10px !important;
   }
 
-  h1 {
-    font-size: 2rem;
+  .gtranslate_wrapper .gt_float_switcher .gt_languages {
+    max-height: 150px !important;
   }
 
-  .description {
-    font-size: 1rem;
-  }
-
-  .download-btn {
-    font-size: 1rem;
-    padding: 0.8rem 1.5rem;
-  }
-
-  .details-section summary {
-    font-size: 1.1rem;
+  .gtranslate_wrapper .gt_float_switcher .gt_languages a {
+    padding: 6px 12px !important;
+    font-size: 0.85rem !important;
   }
 }
 
@@ -311,5 +427,14 @@ a:hover::after {
 
   .details-section {
     padding: 1rem;
+  }
+
+  .gtranslate_wrapper {
+    top: 10px;
+    right: 10px;
+  }
+
+  .gtranslate_wrapper .gt_float_switcher {
+    padding: 5px 8px !important;
   }
 }
