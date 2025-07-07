@@ -164,9 +164,6 @@ const App = () => {
                     </ul>
                 </details>
             </div>
-            <div class="gtranslate_wrapper"></div>
-            <script>window.gtranslateSettings = {"default_language":"en","native_language_names":true,"detect_browser_language":true,"wrapper_selector":".gtranslate_wrapper"}</script>
-            <script src="https://cdn.gtranslate.net/widgets/latest/float.js" defer></script>
             <footer className="footer">
                 <p>Made with <span className="heart">❤</span> by @gqdThinky & @ProgMEM-CC</p>
                 <p>Amber Client is an independent project. Not affiliated with Mojang or Microsoft.</p>
