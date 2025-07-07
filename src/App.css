@@ -1,7 +1,6 @@
 @font-face {
   font-family: 'MinecraftOTF';
   src: url('https://raw.githubusercontent.com/ProgMEM-CC/Minecraft-Font/refs/heads/main/Minecraft.otf') format('opentype');
-  /* BOLD FONT src: url('https://raw.githubusercontent.com/IdreesInc/Minecraft-Font/main/Minecraft-Bold.otf') format('opentype'); */
   font-weight: normal;
   font-style: normal;
 }
@@ -12,6 +11,11 @@
   --surface: rgba(20, 20, 20, 0.85);
   --text: #e8e8e8;
   --accent: #ffb300;
+  --shadow-glow: 0 0 80px rgba(255, 202, 40, 0.1);
+  --border-glow: 1px solid rgba(255, 202, 40, 0.1);
+  --text-shadow: 0 0 10px rgba(255, 202, 40, 0.5), 0 0 20px rgba(255, 202, 40, 0.3), 0 0 30px rgba(255, 202, 40, 0.1);
+  --backdrop-blur: blur(15px);
+  --transition: all 0.3s ease;
 }
 
 * {
@@ -48,13 +52,10 @@ body, html {
   padding: 3rem;
   width: 100%;
   max-width: 900px;
-  backdrop-filter: blur(15px);
-  -webkit-backdrop-filter: blur(15px);
-  border: 1px solid rgba(255, 202, 40, 0.1);
-  box-shadow:
-          0 8px 32px rgba(0, 0, 0, 0.3),
-          0 0 80px rgba(255, 202, 40, 0.1),
-          inset 0 1px 0 rgba(255, 255, 255, 0.05);
+  backdrop-filter: var(--backdrop-blur);
+  -webkit-backdrop-filter: var(--backdrop-blur);
+  border: var(--border-glow);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3), var(--shadow-glow), inset 0 1px 0 rgba(255, 255, 255, 0.05);
   animation: fadeIn 1s ease;
   display: flex;
   flex-direction: column;
@@ -66,10 +67,7 @@ body, html {
 .glass::before {
   content: '';
   position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
+  inset: 0;
   background: radial-gradient(circle at 50% 50%, rgba(255, 202, 40, 0.03) 0%, transparent 70%);
   border-radius: 20px;
   pointer-events: none;
@@ -81,10 +79,7 @@ h1 {
   margin-bottom: 1.5rem;
   color: var(--primary);
   text-align: center;
-  text-shadow:
-          0 0 10px rgba(255, 202, 40, 0.5),
-          0 0 20px rgba(255, 202, 40, 0.3),
-          0 0 30px rgba(255, 202, 40, 0.1);
+  text-shadow: var(--text-shadow);
   white-space: nowrap;
   overflow: hidden;
   display: inline-block;
@@ -110,10 +105,8 @@ h1 {
   border: none;
   border-radius: 12px;
   text-decoration: none;
-  box-shadow:
-          0 4px 15px rgba(255, 202, 40, 0.3),
-          0 0 30px rgba(255, 202, 40, 0.2);
-  transition: all 0.3s ease;
+  box-shadow: 0 4px 15px rgba(255, 202, 40, 0.3), 0 0 30px rgba(255, 202, 40, 0.2);
+  transition: var(--transition);
   text-align: center;
   cursor: pointer;
   font-weight: bold;
@@ -132,16 +125,14 @@ h1 {
   transition: left 0.5s ease;
 }
 
-.download-btn:hover::before {
-  left: 100%;
-}
-
 .download-btn:hover {
   background: linear-gradient(135deg, #ffd54f, #ffca28);
   transform: translateY(-2px) scale(1.03);
-  box-shadow:
-          0 8px 25px rgba(255, 202, 40, 0.4),
-          0 0 40px rgba(255, 202, 40, 0.3);
+  box-shadow: 0 8px 25px rgba(255, 202, 40, 0.4), 0 0 40px rgba(255, 202, 40, 0.3);
+}
+
+.download-btn:hover::before {
+  left: 100%;
 }
 
 .details-section {
@@ -151,8 +142,7 @@ h1 {
   padding: 1rem 1.5rem;
   margin-bottom: 1.5rem;
   width: 100%;
-  box-sizing: border-box;
-  transition: all 0.3s ease;
+  transition: var(--transition);
   backdrop-filter: blur(10px);
   -webkit-backdrop-filter: blur(10px);
 }
@@ -160,9 +150,7 @@ h1 {
 .details-section[open] {
   background: rgba(255, 255, 255, 0.04);
   border-color: rgba(255, 202, 40, 0.25);
-  box-shadow:
-          0 4px 20px rgba(0, 0, 0, 0.1),
-          inset 0 1px 0 rgba(255, 255, 255, 0.05);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1), inset 0 1px 0 rgba(255, 255, 255, 0.05);
 }
 
 .details-section summary {
@@ -173,7 +161,7 @@ h1 {
   list-style: none;
   outline: none;
   padding: 0.5rem 0;
-  transition: all 0.3s ease;
+  transition: var(--transition);
   text-shadow: 0 0 5px rgba(255, 202, 40, 0.3);
 }
 
@@ -218,7 +206,7 @@ h1 {
 a {
   color: var(--primary);
   text-decoration: none;
-  transition: all 0.3s ease;
+  transition: var(--transition);
   position: relative;
 }
 
@@ -255,17 +243,7 @@ a:hover::after {
   filter: drop-shadow(0 0 3px rgba(255, 107, 107, 0.5));
 }
 
-@keyframes fadeIn {
-  from {
-    opacity: 0;
-    transform: translateY(30px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
+/* GTranslate Styles */
 .gtranslate_wrapper {
   position: fixed;
   top: 20px;
@@ -274,17 +252,14 @@ a:hover::after {
   font-family: 'MinecraftOTF', monospace !important;
 }
 
-/* Bouton principal */
 .gtranslate_wrapper .gt_float_switcher {
   background: var(--surface) !important;
   border: 1px solid rgba(255, 202, 40, 0.2) !important;
   border-radius: 12px !important;
-  backdrop-filter: blur(15px) !important;
-  -webkit-backdrop-filter: blur(15px) !important;
-  box-shadow:
-          0 4px 15px rgba(0, 0, 0, 0.2),
-          0 0 20px rgba(255, 202, 40, 0.1) !important;
-  transition: all 0.3s ease !important;
+  backdrop-filter: var(--backdrop-blur) !important;
+  -webkit-backdrop-filter: var(--backdrop-blur) !important;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2), 0 0 20px rgba(255, 202, 40, 0.1) !important;
+  transition: var(--transition) !important;
   padding: 8px 12px !important;
   font-family: 'MinecraftOTF', monospace !important;
 }
@@ -292,13 +267,10 @@ a:hover::after {
 .gtranslate_wrapper .gt_float_switcher:hover {
   background: rgba(255, 202, 40, 0.1) !important;
   border-color: rgba(255, 202, 40, 0.4) !important;
-  box-shadow:
-          0 6px 20px rgba(0, 0, 0, 0.3),
-          0 0 30px rgba(255, 202, 40, 0.2) !important;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3), 0 0 30px rgba(255, 202, 40, 0.2) !important;
   transform: translateY(-2px) !important;
 }
 
-/* Texte du bouton */
 .gtranslate_wrapper .gt_float_switcher .gt_selected {
   color: var(--primary) !important;
   font-weight: bold !important;
@@ -306,30 +278,26 @@ a:hover::after {
   font-family: 'MinecraftOTF', monospace !important;
 }
 
-/* Flèche du dropdown */
 .gtranslate_wrapper .gt_float_switcher .gt_float_arrow {
   border-top-color: var(--primary) !important;
   filter: drop-shadow(0 0 3px rgba(255, 202, 40, 0.5)) !important;
 }
 
-/* Menu déroulant */
 .gtranslate_wrapper .gt_float_switcher .gt_languages {
   background: var(--surface) !important;
   border: 1px solid rgba(255, 202, 40, 0.2) !important;
   border-radius: 12px !important;
-  backdrop-filter: blur(15px) !important;
-  -webkit-backdrop-filter: blur(15px) !important;
-  box-shadow:
-          0 8px 32px rgba(0, 0, 0, 0.3),
-          0 0 80px rgba(255, 202, 40, 0.1) !important;
+  backdrop-filter: var(--backdrop-blur) !important;
+  -webkit-backdrop-filter: var(--backdrop-blur) !important;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3), var(--shadow-glow) !important;
   margin-top: 5px !important;
   padding: 8px 0 !important;
   max-height: 200px !important;
   overflow-y: auto !important;
   font-family: 'MinecraftOTF', monospace !important;
+  animation: gtFadeIn 0.3s ease !important;
 }
 
-/* Scrollbar personnalisée pour le menu */
 .gtranslate_wrapper .gt_float_switcher .gt_languages::-webkit-scrollbar {
   width: 6px;
 }
@@ -345,13 +313,12 @@ a:hover::after {
   box-shadow: 0 0 3px rgba(255, 202, 40, 0.5);
 }
 
-/* Options de langue */
 .gtranslate_wrapper .gt_float_switcher .gt_languages a {
   color: var(--text) !important;
   padding: 8px 16px !important;
   text-decoration: none !important;
   display: block !important;
-  transition: all 0.3s ease !important;
+  transition: var(--transition) !important;
   font-family: 'MinecraftOTF', monospace !important;
   font-size: 0.9rem !important;
   border-left: 3px solid transparent !important;
@@ -365,7 +332,6 @@ a:hover::after {
   transform: translateX(5px) !important;
 }
 
-/* Option actuellement sélectionnée */
 .gtranslate_wrapper .gt_float_switcher .gt_languages a.gt_current_language {
   background: rgba(255, 202, 40, 0.15) !important;
   color: var(--primary) !important;
@@ -374,9 +340,16 @@ a:hover::after {
   text-shadow: 0 0 5px rgba(255, 202, 40, 0.3) !important;
 }
 
-/* Animation d'entrée */
-.gtranslate_wrapper .gt_float_switcher .gt_languages {
-  animation: gtFadeIn 0.3s ease !important;
+/* Animations */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 @keyframes gtFadeIn {
@@ -390,7 +363,7 @@ a:hover::after {
   }
 }
 
-/* Responsive */
+/* Responsive Design */
 @media (max-width: 768px) {
   .gtranslate_wrapper {
     top: 15px;
