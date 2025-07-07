@@ -164,7 +164,6 @@ const App = () => {
                     </ul>
                 </details>
             </div>
-
             <footer className="footer">
                 <p>Made with <span className="heart">❤</span> by @gqdThinky & @ProgMEM-CC</p>
                 <p>Amber Client is an independent project. Not affiliated with Mojang or Microsoft.</p>
