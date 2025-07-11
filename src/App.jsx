@@ -2,23 +2,15 @@ import React from 'react';
 import './App.css';
 
 const App = () => {
-    const modules = [
-        'Hitbox',
-        'Fullbright',
-        'Xray',
-        'NoFall',
-        'KillAura',
-        'AutoClicker',
-        'SafeWalk',
-        'FastPlace',
-        'FastBreak',
-        'EntityESP',
-        'MurdererFinder (for Hypixel)',
-        'AutoClutch',
-        'Velocity',
-        'AimAssist',
-        'NoHurtCam'
-    ];
+    const modules = {
+        Combat: ['KillAura', 'AimAssist', 'Velocity', 'Hitbox'],
+        Minigames: ['MurdererFinder (for Hypixel)'],
+        Miscellaneous: ['NoHurtCam'],
+        Movement: ['NoFall', 'SafeWalk', 'AutoClutch'],
+        Player: ['AutoClicker', 'FastPlace', 'FastBreak'],
+        Render: ['Fullbright', 'Xray', 'EntityESP'],
+        World: []
+    };
 
     const github_contributors = [
         { name: '@enzzzh', url: 'https://github.com/enzzzh' },
@@ -99,8 +91,15 @@ const App = () => {
                 <details className="details-section">
                     <summary>📦 Modules</summary>
                     <ul>
-                        {modules.map((module, index) => (
-                            <li key={index}>{module}</li>
+                        {Object.entries(modules).map(([category, moduleList], index) => (
+                            <li key={index}>
+                                <strong>{category}</strong>
+                                <ul>
+                                    {moduleList.map((module, moduleIndex) => (
+                                        <li key={moduleIndex}>{module}</li>
+                                    ))}
+                                </ul>
+                            </li>
                         ))}
                     </ul>
                 </details>
