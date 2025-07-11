@@ -3,13 +3,13 @@ import './App.css';
 
 const App = () => {
     const modules = {
-        Combat: ['KillAura', 'AimAssist', 'Velocity', 'Hitbox'],
-        Minigames: ['MurdererFinder (for Hypixel)'],
-        Miscellaneous: ['NoHurtCam'],
-        Movement: ['NoFall', 'SafeWalk', 'AutoClutch'],
-        Player: ['AutoClicker', 'FastPlace', 'FastBreak'],
-        Render: ['Fullbright', 'Xray', 'EntityESP'],
-        World: []
+        Combat: ['AimAssist', 'AutoClicker', 'AutoPotion', 'Hitbox', 'KillAura', 'Velocity'],
+        Minigames: ['MurdererFinder'],
+        Miscellaneous: ['ActiveMods', 'DiscordRPC', 'Transparency'],
+        Movement: ['AutoClutch', 'NoFall', 'SafeWalk'],
+        Player: ['AntiHunger', 'FastBreak', 'FastPlace'],
+        Render: ['EntityESP', 'Fullbright', 'NoHurtCam', 'Xray'],
+        World: ['MacroRecorder']
     };
 
     const github_contributors = [
@@ -90,18 +90,20 @@ const App = () => {
 
                 <details className="details-section">
                     <summary>📦 Modules</summary>
-                    <ul>
+                    <div className="modules-grid">
                         {Object.entries(modules).map(([category, moduleList], index) => (
-                            <li key={index}>
+                            <div key={index} className="category-group">
                                 <strong>{category}</strong>
-                                <ul>
+                                <div className="module-list">
                                     {moduleList.map((module, moduleIndex) => (
-                                        <li key={moduleIndex}>{module}</li>
+                                        <div key={moduleIndex} className="module-item" title={module}>
+                                            {module}
+                                        </div>
                                     ))}
-                                </ul>
-                            </li>
+                                </div>
+                            </div>
                         ))}
-                    </ul>
+                    </div>
                 </details>
 
                 <details className="details-section">

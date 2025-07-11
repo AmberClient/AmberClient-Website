@@ -363,6 +363,37 @@ a:hover::after {
   }
 }
 
+/* Modules Grid Styles */
+.modules-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 20px;
+  padding: 10px;
+}
+
+.category-group {
+  background: #1a1a1a;
+  border-radius: 5px;
+  padding: 10px;
+}
+
+.module-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+  gap: 5px;
+  margin-top: 5px;
+}
+
+.module-item {
+  padding: 5px;
+  background: #2a2a2a;
+  border-radius: 3px;
+  text-align: center;
+  white-space: nowrap;        /* Empêche le texte de passer à la ligne */
+  overflow: hidden;           /* Cache le texte qui dépasse */
+  text-overflow: ellipsis;    /* Ajoute des points de suspension pour le texte tronqué */
+}
+
 /* Responsive Design */
 @media (max-width: 768px) {
   .gtranslate_wrapper {
