@@ -35,14 +35,24 @@ const App = () => {
                     A Minecraft mod client focused on a clean design, performance, and essential utility modules.
                 </p>
 
-                <a
-                    href="https://github.com/gqdThinky/AmberClient/releases/tag/Beta_0.6.0"
-                    className="download-btn"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                >
-                    Download Now
-                </a>
+                <div className="download-buttons">
+                    <a
+                        href="https://github.com/gqdThinky/AmberClient/releases/tag/Beta"
+                        className="download-btn"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                    >
+                        Download InDev (0.6.1)
+                    </a>
+                    <a
+                        href="https://github.com/gqdThinky/AmberClient/releases/tag/Beta_0.6.0"
+                        className="download-btn"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                    >
+                        Download LTS (0.6.0)
+                    </a>
+                </div>
 
                 <details className="details-section">
                     <summary>🚀 How to Use</summary>

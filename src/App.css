@@ -95,9 +95,16 @@ h1 {
   color: rgba(232, 232, 232, 0.9);
 }
 
+.download-buttons {
+  display: flex;
+  gap: 5rem;
+  margin: 1.5rem auto 2.5rem auto;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
 .download-btn {
   display: inline-block;
-  margin: 1.5rem auto 2.5rem auto;
   padding: 1rem 2rem;
   font-size: 1.2rem;
   color: #1a1a1a;
@@ -112,6 +119,7 @@ h1 {
   font-weight: bold;
   position: relative;
   overflow: hidden;
+  min-width: 160px;
 }
 
 .download-btn::before {
@@ -389,13 +397,23 @@ a:hover::after {
   background: #2a2a2a;
   border-radius: 3px;
   text-align: center;
-  white-space: nowrap;        /* Empêche le texte de passer à la ligne */
-  overflow: hidden;           /* Cache le texte qui dépasse */
-  text-overflow: ellipsis;    /* Ajoute des points de suspension pour le texte tronqué */
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 /* Responsive Design */
 @media (max-width: 768px) {
+  .download-buttons {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .download-btn {
+    width: 100%;
+    max-width: 250px;
+  }
+
   .gtranslate_wrapper {
     top: 15px;
     right: 15px;
