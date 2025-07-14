@@ -3,7 +3,7 @@ import './App.css';
 
 const App = () => {
     const modules = {
-        Combat: ['AimAssist', 'AutoClicker', 'AutoPotion', 'Hitbox', 'KillAura', 'Velocity'],
+        Combat: ['AimAssist', 'AutoClicker', 'AutoPotion', "FakeLag" ,'Hitbox', 'KillAura', 'Velocity'],
         Minigames: ['MurdererFinder'],
         Miscellaneous: ['ActiveMods', 'DiscordRPC', 'Transparency'],
         Movement: ['AutoClutch', 'NoFall', 'SafeWalk'],
