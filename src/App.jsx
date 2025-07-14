@@ -1,5 +1,6 @@
 import React from 'react';
 import './App.css';
+import { FaGithub, FaDiscord } from 'react-icons/fa';
 
 const App = () => {
     const modules = {
@@ -15,7 +16,7 @@ const App = () => {
     const github_contributors = [
         { name: '@enzzzh', url: 'https://github.com/enzzzh' },
         { name: '@ProgMEM-CC', url: 'https://github.com/ProgMEM-CC' }
-    ]
+    ];
 
     const reddit_contributors = [
         { name: 'u/Ok_Butterfly8951', url: 'https://www.reddit.com/user/Ok_Butterfly8951/' },
@@ -174,6 +175,16 @@ const App = () => {
                         ))}
                     </ul>
                 </details>
+
+                <div className="social-links">
+                    <a href="https://github.com/gqdThinky/AmberClient" className="icon-link" target="_blank" rel="noopener noreferrer">
+                        <FaGithub size={32} />
+                    </a>
+                    <a href="https://discord.gg/jwgSKxWqrn" className="icon-link" target="_blank" rel="noopener noreferrer">
+                        <FaDiscord size={32} />
+                    </a>
+                </div>
+
             </div>
             <footer className="footer">
                 <p>Made with <span className="heart">❤</span> by @gqdThinky & @ProgMEM-CC</p>

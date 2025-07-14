@@ -460,3 +460,24 @@ a:hover::after {
     padding: 5px 8px !important;
   }
 }
+
+.social-links {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+}
+
+.icon-link {
+  color: var(--primary);
+  transition: var(--transition);
+}
+
+.icon-link:hover {
+  color: var(--accent);
+  transform: scale(1.1);
+  filter: drop-shadow(0 0 5px rgba(255, 179, 0, 0.5));
+}
+
+.icon-link::after {
+  display: none;
+}
