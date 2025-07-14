@@ -177,11 +177,11 @@ const App = () => {
                 </details>
 
                 <div className="social-links">
-                    <a href="https://github.com/gqdThinky/AmberClient" className="icon-link" target="_blank" rel="noopener noreferrer">
-                        <FaGithub size={32} />
-                    </a>
                     <a href="https://discord.gg/jwgSKxWqrn" className="icon-link" target="_blank" rel="noopener noreferrer">
                         <FaDiscord size={32} />
+                    </a>
+                    <a href="https://github.com/gqdThinky/AmberClient" className="icon-link" target="_blank" rel="noopener noreferrer">
+                        <FaGithub size={32} />
                     </a>
                 </div>
 
