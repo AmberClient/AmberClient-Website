@@ -9,7 +9,7 @@ const App = () => {
         Miscellaneous: ['ActiveMods', 'DiscordRPC', 'Transparency'],
         Movement: ['AutoClutch', 'NoFall', 'SafeWalk'],
         Player: ['AntiHunger', 'FastBreak', 'FastPlace'],
-        Render: ['EntityESP', 'Fullbright', 'NoHurtCam', 'Xray'],
+        Render: ['EntityESP', 'Fullbright', 'NoHurtCam', 'Trajectory','Xray'],
         World: ['MacroRecorder']
     };
 
