@@ -33,7 +33,7 @@ const App = () => {
                 </h1>
 
                 <p className="description">
-                    A Minecraft mod client focused on a clean design, performance, and essential utility modules.
+                    A 1.21.4 Minecraft client focused on a clean design, performance, and essential utility modules.
                 </p>
 
                 <div className="download-buttons">
