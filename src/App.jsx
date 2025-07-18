@@ -46,12 +46,12 @@ const App = () => {
                         Download InDev (0.6.1)
                     </a>
                     <a
-                        href="https://github.com/gqdThinky/AmberClient/releases/tag/Beta_0.6.0"
+                        href="https://github.com/gqdThinky/AmberClient/releases/tag/Beta_0.6.1"
                         className="download-btn"
                         target="_blank"
                         rel="noopener noreferrer"
                     >
-                        Download LTS (0.6.0)
+                        Download LTS (0.6.1)
                     </a>
                 </div>
 
