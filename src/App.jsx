@@ -4,13 +4,13 @@ import { FaGithub, FaDiscord } from 'react-icons/fa';
 
 const App = () => {
     const modules = {
-        Combat: ['AimAssist', 'AutoClicker', 'AutoPotion', "FakeLag" ,'Hitbox', 'KillAura', 'Velocity'],
+        Combat: ['AimAssist', 'AutoClicker', 'AutoPotion', 'Hitbox', 'KillAura', 'Velocity'],
         Minigames: ['MurdererFinder'],
         Miscellaneous: ['ActiveMods', 'DiscordRPC', 'Transparency'],
         Movement: ['AutoClutch', 'NoFall', 'SafeWalk'],
-        Player: ['AntiHunger', 'FastBreak', 'FastPlace'],
+        Player: ['AntiHunger', 'FakeLag','FastBreak', 'FastPlace'],
         Render: ['EntityESP', 'Fullbright', 'NoHurtCam', 'Trajectory','Xray'],
-        World: ['MacroRecorder']
+        World: ['GhostHand', 'MacroRecorder']
     };
 
     const github_contributors = [
