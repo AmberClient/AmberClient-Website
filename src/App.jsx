@@ -43,7 +43,7 @@ const App = () => {
                         target="_blank"
                         rel="noopener noreferrer"
                     >
-                        Download InDev (0.6.1)
+                        Download QuickRelease (0.6.1)
                     </a>
                     <a
                         href="https://github.com/gqdThinky/AmberClient/releases/tag/Beta_0.6.1"
@@ -53,6 +53,13 @@ const App = () => {
                     >
                         Download LTS (0.6.1)
                     </a>
+                    <a
+                        href="https://nightly.link/gqdThinky/AmberClient/workflows/build/main?preview"
+                        className="download-btn"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                    >
+                        Download NightlyBoot (Bleeding Edge)
                 </div>
 
                 <details className="details-section">
