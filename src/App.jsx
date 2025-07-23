@@ -60,6 +60,7 @@ const App = () => {
                         rel="noopener noreferrer"
                     >
                         Download NightlyBoot (Bleeding Edge)
+                    </a>
                 </div>
 
                 <details className="details-section">
